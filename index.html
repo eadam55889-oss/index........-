@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرحباً بك ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* الخلفية - تأكدي إن الصورة في نفس الفولدر */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('back.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background: #e94560;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        button:hover {
+            background: #ff2e63;
+            transform: translateY(-2px);
+        }
+
+        #errorMsg {
+            color: #ff4d4d;
+            margin-top: 15px;
+            font-weight: bold;
+            display: none; /* مخفي في البداية */
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <h2>اكتب الباسورد 🙄</h2>
+    <input type="text" id="passwordField" placeholder="DD/MM/YYYY">
+    <button onclick="checkPass()">دخول</button>
+    <p id="errorMsg">مش ده يروحي 🙄</p>
+</div>
+
+<script>
+    function checkPass() {
+        const passInput = document.getElementById('passwordField').value;
+        const error = document.getElementById('errorMsg');
+        
+        // الباسورد المطلوب
+        if (passInput === "2024/7/29") {
+            // لو صح يحول على الصفحة التانية
+            window.location.href = "hj.html"; 
+        } else {
+            // لو غلط يظهر كلمة "مش ده يروحي"
+            error.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
